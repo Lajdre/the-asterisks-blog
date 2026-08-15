@@ -9,6 +9,8 @@ execute:
   freeze: true
 ---
 
+![](./thumbnail2.png){fig-align="center" width=40%}
+
 What I, and probably you, want:
 
 1. Not to install Jupyter into every project, where you would like to use it for
@@ -228,7 +230,7 @@ using it, does not like that already). Otherwise, good luck.
   - [https://discourse.nixos.org/t/my-painpoints-with-flakes/9750/20](https://discourse.nixos.org/t/my-painpoints-with-flakes/9750/20)  
   - [https://discourse.nixos.org/t/my-painpoints-with-flakes/9750/22](https://discourse.nixos.org/t/my-painpoints-with-flakes/9750/22)
 
-Here are some resources regarding that:  
+Here are some resources on that:  
   - [Flakes without Git copies entire tree to Nix store](https://discourse.nixos.org/t/flakes-without-git-copies-entire-tree-to-nix-store/10743)  
   - [Copy local flakes to the store lazily](https://github.com/NixOS/nix/issues/3121)
 

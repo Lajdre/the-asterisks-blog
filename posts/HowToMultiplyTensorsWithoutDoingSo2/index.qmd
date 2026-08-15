@@ -1,5 +1,5 @@
 ---
-title: "How to multiply tensors without doing so? (2/3)"
+title: "How to multiply tensors without doing so (2/3)"
 author: "Andre Mirończuk"
 date: "2024-09-02"
 categories: [pytorch, tensors]
