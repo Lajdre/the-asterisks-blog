@@ -3,7 +3,7 @@ title: "Different ways of counting PyTorch model FLOPs (library compilation)"
 author: "Andre Mirończuk"
 date: "2025-03-27"
 categories: [pytorch, FLOPs]
-image: "./thumbnail.png"
+image: "./pytorch_logo_plus_minus_2.png"
 execute:
   freeze: true
 ---
