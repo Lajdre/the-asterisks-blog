@@ -1,6 +1,6 @@
 {
   inputs = {
-    quarto-base.url = "github:asterikss/quarto-base-flake";
+    quarto-base.url = "github:lajdre/quarto-base-flake";
 
     nixpkgs.follows = "quarto-base/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";

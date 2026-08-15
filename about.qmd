@@ -7,7 +7,7 @@ about:
   links:
     - icon: github
       text: Github
-      href: https://github.com/asterikss
+      href: https://github.com/lajdre
 ---
 
 Oh no! There doesn't seem to be much information about me. This is a national

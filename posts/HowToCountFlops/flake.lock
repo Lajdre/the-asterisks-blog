@@ -60,13 +60,13 @@
       "locked": {
         "lastModified": 1746220324,
         "narHash": "sha256-9aJhHieXXsVRyYSg0IQz7BJBFUpI+s31cszB7Qw3W0U=",
-        "owner": "asterikss",
+        "owner": "lajdre",
         "repo": "quarto-base-flake",
         "rev": "96b8eb8ea8639192d523ab40191d045048cdb952",
         "type": "github"
       },
       "original": {
-        "owner": "asterikss",
+        "owner": "lajdre",
         "repo": "quarto-base-flake",
         "type": "github"
       }

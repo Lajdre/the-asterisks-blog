@@ -12,10 +12,10 @@ website:
       - text: White Papers
         href: papers.qmd
     right:
-      - text: About
-        href: about.qmd
+      # - text: About
+      #   href: about.qmd
       - icon: github
-        href: https://github.com/asterikss
+        href: https://github.com/lajdre
 
 format:
   html:
