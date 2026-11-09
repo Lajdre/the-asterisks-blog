@@ -1,0 +1,77 @@
+---
+title: "How to Fix Neovim's gq / gw Randomly Indenting Paragraphs"
+author: "Andre Mirończuk"
+date: "2026-08-17"
+categories: [Neovim]
+image: "./gq_gw_thumbnail.png"
+execute:
+  freeze: true
+---
+
+TLDR:  
+Neovim thinks you are writing C with the default settings when smartindent is set to
+true. Clear the cinwords opt (`vim.opt.cinwords = {}` or `:set cinwords=`).
+
+Have you ever formatted your prose in a markdown/txt file with the built-in formatter
+and got weird extra indentation?
+
+Example:
+```markdown
+I tried writing a deeply moving novel about my existential dread, but my editor had
+for some bizarre reason decided that my emotional narrative was actually C code, so
+        now my deepest confession is sitting here indented like a nested loop.
+```
+
+This happens when smartindent is set to true (non-default) and cinwords set is
+populated (by default it's `cinwords=if,else,while,do,for,switch`). When it just so
+happens that after formatting a line according to the `textwidth` the new line starts
+with one of those words, the following line is indented based on `shiftwidth` (the
+default is 8).
+
+To reproduce (v0.12.6):
+
+1. Open clean Neovim
+```bash
+nvim --clean
+```
+
+2. Set these settings
+```
+:set smartindent
+```
+```
+:set textwidth=85
+```
+
+3. Paste this text
+
+```markdown
+I tried writing a deeply moving novel about my existential dread, but my editor had for some bizarre reason decided that my emotional narrative was actually C code, so now my deepest confession is sitting here indented like a nested loop.
+```
+
+4. Put your cursor on this line and press `gqq` or `gww` or `gqip` or `gwip`
+
+Result:
+
+```markdown
+I tried writing a deeply moving novel about my existential dread, but my editor had
+for some bizarre reason decided that my emotional narrative was actually C code, so
+        now my deepest confession is sitting here indented like a nested loop.
+```
+
+Tips:  
+If you are using `gq`, consider switching to `gw`. `gw` automatically preserves the
+cursor position and it does not use formatprg and formatexpr, that can be set
+depending on what plugins do you use (for example `conform.nvim`).
+
+Keymaps you might like:
+```lua
+vim.keymap.set('n', '<A-q>', 'gwip', { noremap = true })
+
+-- Like Ctrl+v, but it will immediately format the line according to the textwidth, if set
+vim.keymap.set('i', '<M-C-V>', '<C-R>+', { noremap = true })
+vim.keymap.set('n', '<M-C-V>', function()
+  vim.cmd('normal! "+p')
+  vim.cmd('normal! gww')
+end, { noremap = true })
+```
